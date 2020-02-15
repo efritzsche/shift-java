@@ -73,14 +73,15 @@
             <version>3.0.2</version>
         </dependency>
 		<dependency>
-			<groupId>org.yaml</groupId>
-			<artifactId>snakeyaml</artifactId>
-			<version>1.16</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>${snakeyaml.version}</version>
 			<scope>test</scope>
 		</dependency>
     </dependencies>
@@ -91,6 +92,7 @@
 		<gpg.skip>true</gpg.skip>
 
 		<junit.version>4.12</junit.version>
+		<snakeyaml.version>1.25</snakeyaml.version>
 
 		<plugin.surefire.version>2.22.2</plugin.surefire.version>
 		<plugin.jacoco.version>0.8.5</plugin.jacoco.version>
