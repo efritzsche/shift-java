@@ -48,11 +48,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
-		<dependency>
 			<groupId>com.intellij</groupId>
 			<artifactId>annotations</artifactId>
 			<version>5.1</version>
@@ -88,12 +83,23 @@
 			<artifactId>snakeyaml</artifactId>
 			<version>1.16</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<gpg.skip>true</gpg.skip>
+
+		<junit.version>4.12</junit.version>
+
+		<plugin.surefire.version>2.22.2</plugin.surefire.version>
+		<plugin.jacoco.version>0.8.5</plugin.jacoco.version>
 	</properties>
 
 	<build>
@@ -126,7 +132,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.2.201409121644</version>
+				<version>${plugin.jacoco.version}</version>
 				<executions>
 					<execution>
 						<id>pre-unit-test</id>
@@ -191,7 +197,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.17</version>
+				<version>${plugin.surefire.version}</version>
 				<configuration><!-- Sets the VM argument line used when unit tests are run. -->
 					<argLine>${JACOCO_AGENT_OPT}</argLine>
 					<excludes>
