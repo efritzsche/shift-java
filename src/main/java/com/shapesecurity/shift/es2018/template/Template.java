@@ -1,5 +1,7 @@
 package com.shapesecurity.shift.es2018.template;
 
+import javax.annotation.Nonnull;
+
 import com.shapesecurity.functional.F;
 import com.shapesecurity.functional.F2;
 import com.shapesecurity.functional.Pair;
@@ -14,7 +16,6 @@ import com.shapesecurity.shift.es2018.parser.ParserWithLocation;
 import com.shapesecurity.shift.es2018.parser.SourceSpan;
 import com.shapesecurity.shift.es2018.reducer.*;
 import com.shapesecurity.shift.es2018.utils.WithLocation;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -129,7 +130,7 @@ public class Template {
 	}
 
 	static final Pattern commentRegex = Pattern.compile("^# ([^#]+) (?:# ([^#]+) )?#$");
-	@NotNull
+	@Nonnull
 	private static Maybe<Pair<String, Predicate<Node>>> defaultParseComment(String text) {
 		Matcher matcher = commentRegex.matcher(text);
 		if (!matcher.matches()) {
