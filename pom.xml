@@ -99,9 +99,14 @@
 		<junit.version>4.12</junit.version>
 		<snakeyaml.version>1.25</snakeyaml.version>
 
+		<plugin.nexus.version>1.6.8</plugin.nexus.version>
+		<plugin.gpg.version>1.6</plugin.gpg.version>
+		<plugin.compiler.version>3.8.1</plugin.compiler.version>
 		<plugin.surefire.version>2.22.2</plugin.surefire.version>
 		<plugin.jacoco.version>0.8.5</plugin.jacoco.version>
+		<plugin.source.version>3.2.1</plugin.source.version>
 		<plugin.javadoc.version>3.1.1</plugin.javadoc.version>
+		<plugin.helper.version>3.0.0</plugin.helper.version>
 	</properties>
 
 	<build>
@@ -109,7 +114,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.3</version>
+				<version>${plugin.nexus.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>ossrh</serverId>
@@ -120,7 +125,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
+				<version>${plugin.gpg.version}</version>
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
@@ -157,7 +162,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>${plugin.compiler.version}</version>
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
@@ -173,7 +178,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>${plugin.source.version}</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -213,7 +218,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
+				<version>${plugin.helper.version}</version>
 				<executions>
 					<execution>
 						<id>add-source</id>
